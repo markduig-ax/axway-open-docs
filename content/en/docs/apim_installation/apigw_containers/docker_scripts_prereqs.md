@@ -202,8 +202,8 @@ This example creates a CSR that:
 
 Notes:
 
-
-
 * Subscription licencing can be enabled in the EMT mode
 
   * It will require  the system to connect to the Lighthouse system.  The lighthouse system has a larger footprint on than 3 apigw containers.
+
+    * How do I remove the intent, hhhmmmmm
