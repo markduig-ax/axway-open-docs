@@ -103,8 +103,7 @@ If you are using any external data stores, such as Apache Cassandra for API Mana
 
 ### Start Apache Cassandra
 
-Deploying a Cassandra container is only recommended for development environments. In a production environment, you must configure Cassandra for high availability (HA) as detailed in
-[Configure a Cassandra HA cluster](/docs/cass_admin/cassandra_config/).
+Deploying a Cassandra container is only recommended for development environments. In a production environment, you must configure Cassandra for high availability (HA) as detailed in [Configure a Cassandra HA cluster](/docs/cass_admin/cassandra_config/).
 
 For details on starting Apache Cassandra in a Docker container, see [Docker](https://hub.docker.com/_/cassandra) documentation.
 
@@ -200,3 +199,11 @@ This example creates a CSR that:
 * Uses a domain identifier of `mydomain`
 * Is stored in the `certs/mydomain` directory
 * Uses a specified passphrase and organization
+
+Notes:
+
+
+
+* Subscription licencing can be enabled in the EMT mode
+
+  * It will require  the system to connect to the Lighthouse system.  The lighthouse system has a larger footprint on than 3 apigw containers.
