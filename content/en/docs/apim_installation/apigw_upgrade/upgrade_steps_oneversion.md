@@ -5,7 +5,6 @@
   "date": "2020-09-30",
   "description": "Learn how to update from API Gateway One Version to the latest delivery."
 }
-
 After you **upgrade** your [API Gateway 7.5.x or 7.6.x](/docs/apim_installation/apigw_upgrade/upgrade_steps_extcass/) to [API Gateway One Version](https://community.axway.com/s/question/0D52X00008WUjgeSAD/introducing-one-version-for-api-management), follow the instructions on this page to **update** your API Gateway One Version to the latest delivery.
 
 * The [sysupgrade](/docs/apim_installation/apigw_upgrade/upgrade_script/) script is not used when updating to API Gateway One Version.
@@ -15,7 +14,7 @@ After you **upgrade** your [API Gateway 7.5.x or 7.6.x](/docs/apim_installation/
 
 You must perform the following procedures to update from API Gateway One Version:
 
-{{% alert title="Note" %}}All these steps are mandatory, and must be followed in this order.{{% /alert %}}
+{{< alert title="Note" color="primary" >}}All these steps are mandatory, and must be followed in this order.{{< /alert >}}
 
 1. [Back up customized files](#back-up-customized-files).
 2. [Install an API Gateway server update](#install-an-api-gateway-server-update).
@@ -73,7 +72,6 @@ To install the update on your existing API Gateway 7.7 server installation, perf
    ```
    setcap -r INSTALL_DIR/apigateway/platform/bin/vshell
    ```
-
 4. Download and unpack the API Gateway 7.7 server update file into a new directory. For example:
 
    ```
@@ -242,7 +240,6 @@ After updating your installation, perform the following steps:
    ```
    <VMArg name="-Djava.library.path=$VDISTDIR/$DISTRIBUTION/jre/lib/amd64/server:$VDISTDIR/$DISTRIBUTION/jre/lib/amd64:$VDISTDIR/$DISTRIBUTION/lib/engines:$VDISTDIR/ext/$DISTRIBUTIONlib:$VDISTDIR/ext/lib:$VDISTDIR/$DISTRIBUTION/jre/lib:system/lib:$VDISTDIR/$DISTRIBUTION/lib"/>
    ```
-
 2. Allow API Gateway to listen on privileged ports:
 
    ```
@@ -256,3 +253,13 @@ Updating API Manager is now carried out during the application of the latest API
 * Policy Studio project upgrades. Importing an existing API Manager Policy Studio project will upgrade API Manager. The upgrade is also applied when creating a new project from an existing `fed` file.
 * API Manager `.fed` files can be upgraded using the [upgradeconfig](/docs/apim_installation/apigw_upgrade/upgrade_analytics#upgradeconfig-options) script.
 * The [projupgrade](/docs/apim_reference/devopstools_ref#projupgrade-command-options) script will apply API Manager updates to any existing projects.
+
+
+
+## Restoring from Backup
+
+When running the ./update_apigw.sh script users have the option of specifying a backup directory with specifying the  --backup_dir option.  This will create a copy of your existing installation directory, if there is a problem with the update then you will be able to use the content of the backup to restore to the point before starting the update.  Note: this will not back up the data in Cassandra or any of the external databases or storage.  
+
+If there has a been significant changes to the configuration since the backup (for example changing the group configuration passphrase) you may not be to restore to a point where the external data will be compatible with the backup.
+
+Note: if you are updating to March2020 version or after you are recommended to run the kps re-encrypt script if you run this you will not be able to restore to a previous backup as some of the data will not be able to read by the older configuration.
