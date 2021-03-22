@@ -254,8 +254,6 @@ Updating API Manager is now carried out during the application of the latest API
 * API Manager `.fed` files can be upgraded using the [upgradeconfig](/docs/apim_installation/apigw_upgrade/upgrade_analytics#upgradeconfig-options) script.
 * The [projupgrade](/docs/apim_reference/devopstools_ref#projupgrade-command-options) script will apply API Manager updates to any existing projects.
 
-
-
 ## Restoring from Backup
 
 When running the ./update_apigw.sh script users have the option of specifying a backup directory with specifying the  --backup_dir option.  This will create a copy of your existing installation directory, if there is a problem with the update then you will be able to use the content of the backup to restore to the point before starting the update.  Note: this will not back up the data in Cassandra or any of the external databases or storage.  
