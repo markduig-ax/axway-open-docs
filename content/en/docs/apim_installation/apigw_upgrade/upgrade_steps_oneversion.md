@@ -264,4 +264,3 @@ When running the ./update_apigw.sh script users have the option of specifying a 
 If there has a been significant changes to the configuration since the backup (for example changing the group configuration passphrase) you may not be to restore to a point where the external data will be compatible with the backup.
 
 Note: if you are updating to March2020 version or after you are recommended to run the kps re-encrypt script if you run this you will not be able to restore to a previous backup as some of the data will not be able to read by the older configuration.
-
